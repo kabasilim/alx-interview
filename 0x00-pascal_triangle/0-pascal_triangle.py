@@ -15,15 +15,18 @@ def pascal_triangle(n):
     - A list of lists of integers representing Pascal's triangle.
     - An empty list if n <= 0.
     """
-      if n <= 0:
+     if n <= 0:
         return []
 
-    triangle = [[1]]
-    for i in range(1, n):
-        row = [1]
-        for j in range(1, i):
-            row.append(triangle[i-1][j-1] + triangle[i-1][j])
-        row.append(1)
-        triangle.append(row)
+    triangle = []
 
+    for col in range(n):
+        new_row = []
+        for row in range(col + 1):
+            if row == 0 or col == row:
+                new_row.append(1)
+            else:
+                new_row.append(triangle[col - 1][row] +
+                               triangle[col - 1][row - 1])
+        triangle.append(new_row)
     return triangle
