@@ -15,7 +15,7 @@ def pascal_triangle(n):
     - A list of lists of integers representing Pascal's triangle.
     - An empty list if n <= 0.
     """
-    if n <= 0:
+      if n <= 0:
         return []
 
     triangle = [[1]]
@@ -27,4 +27,3 @@ def pascal_triangle(n):
         triangle.append(row)
 
     return triangle
-
